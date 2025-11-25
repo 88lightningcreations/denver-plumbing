@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Understanding Your Plumbing System",
+    "description": "A beginner's guide to the pipes and fixtures in your home.",
+    "article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ..."
+  },
+  {
+    "id": "2",
+    "title": "Common Plumbing emergencies and how to handle them",
+    "description": "What to do when you have a burst pipe or a major leak.",
+    "article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ..."
+  },
+  {
+    "id": "3",
+    "title": "The Importance of Regular Drain Cleaning",
+    "description": "Why you should have your drains professionally cleaned on a regular basis.",
+    "article": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ..."
+  }
+]
