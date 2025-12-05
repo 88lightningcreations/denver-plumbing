@@ -1,42 +1,62 @@
 'use client';
-import React from 'react';
-import { Accordion } from 'react-bootstrap';
-
-const faqs = [
-  {
-    question: 'What are your hours?',
-    answer: 'We are available 24/7 for emergency services. Our regular business hours are Monday-Friday from 8am to 5pm.',
-  },
-  {
-    question: 'Do you offer free estimates?',
-    answer: 'Yes, we offer free estimates for all of our services. Please contact us to schedule an appointment.',
-  },
-  {
-    question: 'What types of payment do you accept?',
-    answer: 'We accept all major credit cards, as well as cash and check.',
-  },
-  {
-    question: 'Are you licensed and insured?',
-    answer: 'Yes, we are fully licensed and insured for your protection and peace of mind.',
-  },
-  {
-    question: 'What areas do you service?',
-    answer: 'We service the entire metropolitan area. Please contact us to see if we service your specific location.',
-  },
-];
+import React, { useState, useEffect } from 'react';
+import { getFaqs } from '../../lib/data';
+import styles from './FAQ.module.css';
 
 const FAQ = () => {
+  const [faqs, setFaqs] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchFaqs = async () => {
+      const fetchedFaqs = await getFaqs();
+      setFaqs(fetchedFaqs);
+    };
+
+    fetchFaqs();
+  }, []);
+
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const generateJsonLd = () => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+    return {
+      __html: JSON.stringify(schema)
+    };
+  };
+
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-      <Accordion>
-        {faqs.map((faq, index) => (
-          <Accordion.Item eventKey={String(index)} key={index}>
-            <Accordion.Header>{faq.question}</Accordion.Header>
-            <Accordion.Body>{faq.answer}</Accordion.Body>
-          </Accordion.Item>
-        ))}
-      </Accordion>
+    <div className={styles.faqContainer}>
+      {faqs.map((faq, index) => (
+        <div key={index} className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}>
+          <div className={styles.faqQuestion} onClick={() => toggleFAQ(index)}>
+            {faq.question}
+            <span className={styles.icon}>{activeIndex === index ? '-' : '+'}</span>
+          </div>
+          {activeIndex === index && (
+            <div className={styles.faqAnswer}>
+              {faq.answer}
+            </div>
+          )}
+        </div>
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={generateJsonLd()}
+      />
     </div>
   );
 };

@@ -1,16 +1,20 @@
 import React from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
-import { getBlogs } from '../../lib/data';
+// Using getBlogPosts as it selects all columns, including the slug
+import { getBlogPosts } from '../../lib/data';
 
+// Updated interface to include the slug
 interface Blog {
   id: string;
   title: string;
   description: string;
+  slug: string;
 }
 
 const BlogsPage = async () => {
-  const blogs: Blog[] = await getBlogs();
+  // Using getBlogPosts to fetch the blog data
+  const blogs: Blog[] = await getBlogPosts();
 
   return (
     <Container className="my-5">
@@ -18,8 +22,9 @@ const BlogsPage = async () => {
       <Row>
         {blogs.map((blog) => (
           <Col key={blog.id} lg={4} md={6} sm={12} className="mb-4">
-            <Link href={`/blogs/${blog.id}`} passHref>
-              <Card as="a" className="h-100">
+            {/* The entire card is now a link, pointing to the correct slug-based URL */}
+            <Link href={`/blogs/${blog.slug}`} style={{ textDecoration: 'none' }}>
+              <Card className="h-100">
                 <Card.Body>
                   <Card.Title>{blog.title}</Card.Title>
                   <Card.Text>{blog.description}</Card.Text>

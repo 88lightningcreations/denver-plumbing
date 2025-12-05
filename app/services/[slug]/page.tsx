@@ -2,8 +2,8 @@ import { getService } from '../../../lib/data';
 import Link from 'next/link';
 import { Container, Row, Col } from 'react-bootstrap';
 
-export default async function ServicePage({ params }: { params: { id: string } }) {
-  const service = await getService(params.id);
+export default async function ServicePage({ params }: { params: { slug: string } }) {
+  const service = await getService(params.slug);
 
   if (!service) {
     return <div>Service not found</div>;

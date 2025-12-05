@@ -1,62 +1,47 @@
-import fs from 'fs';
-import path from 'path';
+
 import { supabase } from './supabaseClient';
 
-const servicesFilePath = path.join(process.cwd(), 'lib', 'services.json');
-const blogsFilePath = path.join(process.cwd(), 'lib', 'blogs.json');
-
-export async function getServices() {
-  const { data, error } = await supabase.from('services').select('*');
-
-  if (error || !data) {
-    console.error('Error fetching services from Supabase:', error);
-    const fileContent = fs.readFileSync(servicesFilePath, 'utf8');
-    return JSON.parse(fileContent);
-  } else {
-    return data;
-  }
-}
-
-export async function getService(id: string) {
+export const getBlogPosts = async () => {
   const { data, error } = await supabase
-    .from('services')
+    .from('blog_posts')
     .select('*')
-    .eq('id', id)
+    .eq('is_published', true);
+
+  if (error) {
+    console.error('Error fetching blog posts:', error);
+    return [];
+  }
+
+  return data;
+};
+
+export const getBlogPostBySlug = async (slug: string) => {
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select('*')
+    .eq('slug', slug)
     .single();
 
-  if (error || !data) {
-    console.error(`Error fetching service with id ${id} from Supabase:`, error);
-    const services = await getServices();
-    return services.find((service) => service.id === id);
-  } else {
-    return data;
+  if (error) {
+    console.error(`Error fetching blog post with slug ${slug}:`, error);
+    return null;
   }
-}
 
-export async function getBlogs() {
-  const { data, error } = await supabase.from('blogs').select('*');
+  return data;
+};
 
-  if (error || !data) {
-    console.error('Error fetching blogs from Supabase:', error);
-    const fileContent = fs.readFileSync(blogsFilePath, 'utf8');
-    return JSON.parse(fileContent);
-  } else {
-    return data;
-  }
-}
-
-export async function getBlog(id: string) {
+export const getFaqs = async () => {
   const { data, error } = await supabase
-    .from('blogs')
-    .select('*')
-    .eq('id', id)
-    .single();
+    .from('blog_posts')
+    .select('faq_json')
+    .neq('faq_json', null);
 
-  if (error || !data) {
-    console.error(`Error fetching blog with id ${id} from Supabase:`, error);
-    const blogs = await getBlogs();
-    return blogs.find((blog) => blog.id === id);
-  } else {
-    return data;
+  if (error) {
+    console.error('Error fetching FAQs:', error);
+    return [];
   }
-}
+
+  // The faq_json column likely contains an array of objects, 
+  // so we can just return the data directly.
+  return data.flatMap(item => item.faq_json);
+};

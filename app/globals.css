@@ -1,38 +1,12 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Lato:wght@400;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-}
-
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-section {
-  scroll-snap-align: start;
-  height: 100%;
-  min-height: 100vh;
+  --primary: #3A506B;
+  --secondary: #FFCDB2;
+  --accent: #E07A5F;
+  --neutral-light: #F4F1DE;
+  --neutral-dark: #3D405B;
+  --success: #81B29A;
 }
 
 * {
@@ -41,13 +15,40 @@ section {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+body {
+  padding-top: 56px; /* For the fixed navbar */
+  color: var(--neutral-dark);
+  background: var(--neutral-light);
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lilita One', cursive;
+  color: var(--primary);
+}
+
+main {
+  padding: 2rem 0;
+}
+
+section {
+  padding: 4rem 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
 }

@@ -1,28 +1,19 @@
+'use client';
+
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
 import Link from 'next/link';
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar style={{ backgroundColor: 'var(--primary)' }} variant="dark" expand="lg" fixed="top">
       <Container>
-        <Link href="/" passHref>
-          <Navbar.Brand>Plumbing Co.</Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Link href="/" passHref>
-              <Nav.Link as="a">Home</Nav.Link>
-            </Link>
-            <Link href="/services" passHref>
-              <Nav.Link as="a">Services</Nav.Link>
-            </Link>
-            <Link href="/blogs" passHref>
-              <Nav.Link as="a">Blog</Nav.Link>
-            </Link>
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Brand as={Link} href="/" style={{ fontFamily: 'Lilita One, cursive', color: 'var(--secondary)' }}>Peach Tree Plumbing</Navbar.Brand>
+        <Nav className="ms-auto">
+          <Nav.Link href="tel:720-298-1900" className="text-white" style={{ fontFamily: 'Lilita One, cursive', fontSize: '1.2rem' }}>(720) 298-1900</Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
   );

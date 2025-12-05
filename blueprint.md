@@ -1,35 +1,54 @@
-# Project Overview
+# Peach Tree Plumbing Website Blueprint
 
-This project is a modern, responsive website for a plumbing business. It is built with Next.js and React Bootstrap. The application features a home page with a hero section, a "Why Choose Us" section, and a list of services. It also includes dedicated pages for each service and a blog. The data for services and blogs is designed to be fetched from Supabase, with a fallback to local JSON files.
+## Overview
 
-## Design and Features
+This document outlines the design, features, and development plan for the Peach Tree Plumbing website. The goal is to create a visually appealing, user-friendly, and trustworthy online presence that reflects the brand's friendly and professional image.
 
-### Style and Design:
-*   **Frameworks:** Next.js, React Bootstrap
-*   **Layout:** Responsive design with a focus on a clean and modern user experience.
-*   **Components:**
-    *   **Header:** A navigation bar with links to Home, About, and Services.
-    *   **Hero Section:** A prominent hero section on the homepage to attract users.
-    *   **Why Choose Us:** A section detailing the company's value proposition.
-    *   **Services Section:** A card-based layout showcasing the various plumbing services offered.
-    *   **Service Pages:** Dedicated pages for each service with detailed descriptions.
+## Style and Design
 
-### Features Implemented:
-*   Homepage with Hero, "Why Choose Us", and Services sections.
-*   Dynamic routing for individual service pages.
-*   Data fetching layer in `lib/data.ts` for services.
-*   Supabase client setup in `lib/supabaseClient.ts`.
-*   Asynchronous Server Components for data fetching.
+The website's design is based on the provided hero image, which features a friendly plumber in a peach orchard. The aesthetic is warm, inviting, and slightly retro, emphasizing trustworthiness and quality service.
 
-## Current Plan: Add Blog Functionality
+### Color Palette
 
-### Overview
-The goal is to add a blog to the website. This will involve creating pages to list blog posts and view individual posts. The data will be managed similarly to the services data, with a Supabase-ready data layer that currently uses a local JSON file.
+*   **Primary:** `#3A506B` (Deep Blue - from overalls)
+*   **Secondary:** `#FFCDB2` (Peach - from the fruit)
+*   **Accent:** `#E07A5F` (Terracotta Red - from the wrench)
+*   **Neutral (Light):** `#F4F1DE` (Off-white/Tan - from the image background)
+*   **Neutral (Dark):** `#3D405B` (Dark Green/Brown - from the text in the image)
+*   **Success:** `#81B29A` (Muted Green - from the grass)
 
-### Steps:
-1.  Create a `lib/blogs.json` file with static blog data.
-2.  Update `lib/data.ts` to include `getBlogs` and `getBlog` functions with Supabase and JSON fallback logic.
-3.  Create `app/blogs/page.tsx` to display the list of blog posts.
-4.  Create `app/blogs/[id]/page.tsx` to display a single blog post.
-5.  Update `app/components/Header.tsx` to add a "Blog" link to the navigation bar.
-6.  Run `npm run lint` to check for errors.
+### Typography
+
+*   **Headings:** "Lilita One", a bold and friendly sans-serif font from Google Fonts.
+*   **Body:** "Lato", a clean and readable sans-serif font from Google Fonts.
+
+### Visual Elements
+
+*   **Hero Image:** The main illustration will be prominently featured on the homepage.
+*   **Rounded Corners:** Buttons, cards, and other UI elements will have rounded corners to match the soft, illustrative style of the hero image.
+*   **Subtle Textures:** A subtle noise texture may be applied to backgrounds to add a premium, tactile feel, similar to the texture in the hero image.
+
+## Features
+
+*   **Homepage:**
+    *   Hero section with the main illustration and a clear call-to-action.
+    *   Services overview.
+    *   Customer testimonials/FAQ.
+    *   Blog post carousel.
+*   **Services Page:** Detailed descriptions of the plumbing services offered.
+*   **Blog:** A collection of articles with tips and information related to plumbing.
+*   **Contact Page:** A simple form for customers to get in touch.
+
+## Current Plan
+
+*   **Task:** Redesign the website based on the provided hero image.
+    1.  **Save Image:** Save the hero image to the `public` directory.
+    2.  **Create `blueprint.md`:** Document the design plan.
+    3.  **Update Global Styles:**
+        *   Modify `app/globals.css` to import the new fonts from Google Fonts.
+        *   Update `tailwind.config.ts` (or equivalent) with the new color palette.
+    4.  **Restructure Homepage (`app/page.tsx`):**
+        *   Create a new hero section with a split-screen layout.
+        *   Restyle the `CallToAction`, `Services`, `FAQ`, and `ArticleCarousel` components.
+    5.  **Update `NavigationBar.tsx`:** Adjust the navigation bar style to match the new design.
+    6.  **Review and Refine:** Ensure a consistent and polished look across the entire site.
