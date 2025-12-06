@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import styles from './ArticleCarousel.module.css';
 
 interface Article {
-    id: any;
+    id: string;
     title: string;
     excerpt: string;
     slug: string;

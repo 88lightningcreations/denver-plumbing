@@ -1,11 +1,11 @@
 import React from 'react';
 import { getBlogPosts } from '../../lib/data';
-import BlogList from '../components/BlogList';
+import BlogListWrapper from '../components/BlogListWrapper';
 
 const BlogsPage = async () => {
   const blogs = await getBlogPosts();
 
-  return <BlogList blogs={blogs} />;
+  return <BlogListWrapper blogs={blogs} />;
 };
 
 export default BlogsPage;
