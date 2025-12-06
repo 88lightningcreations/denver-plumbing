@@ -3,20 +3,25 @@ import React, { useState, useEffect } from 'react';
 import { getFaqs } from '../../lib/data';
 import styles from './FAQ.module.css';
 
+interface Faq {
+  question: string;
+  answer: string;
+}
+
 const FAQ = () => {
-  const [faqs, setFaqs] = useState([]);
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [faqs, setFaqs] = useState<Faq[]>([]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchFaqs = async () => {
       const fetchedFaqs = await getFaqs();
-      setFaqs(fetchedFaqs);
+      setFaqs(fetchedFaqs as Faq[]);
     };
 
     fetchFaqs();
   }, []);
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 

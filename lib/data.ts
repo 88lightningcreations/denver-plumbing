@@ -45,3 +45,18 @@ export const getFaqs = async () => {
   // so we can just return the data directly.
   return data.flatMap(item => item.faq_json);
 };
+
+export const getService = async (slug: string) => {
+    const { data, error } = await supabase
+        .from('services')
+        .select('*')
+        .eq('slug', slug)
+        .single();
+
+    if (error) {
+        console.error(`Error fetching service with slug ${slug}:`, error);
+        return null;
+    }
+
+    return data;
+};

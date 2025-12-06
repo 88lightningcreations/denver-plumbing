@@ -5,14 +5,21 @@ import { getBlogPosts } from '../../lib/data';
 import { useEffect, useState } from 'react';
 import styles from './ArticleCarousel.module.css';
 
+interface Article {
+    id: any;
+    title: string;
+    excerpt: string;
+    slug: string;
+}
+
 const ArticleCarousel = () => {
-    const [articles, setArticles] = useState([]);
+    const [articles, setArticles] = useState<Article[]>([]);
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
         const fetchArticles = async () => {
             const fetchedArticles = await getBlogPosts();
-            setArticles(fetchedArticles);
+            setArticles(fetchedArticles as Article[]);
         };
 
         fetchArticles();
