@@ -1,7 +1,7 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import React from 'react';
+import dynamic from 'next/dynamic';
 
 interface Blog {
   id: string;
@@ -18,8 +18,8 @@ const BlogList = dynamic(() => import('./BlogList'), {
   ssr: false,
 });
 
-const BlogListWrapper: React.FC<BlogListProps> = ({ blogs }) => {
+const BlogListClient: React.FC<BlogListProps> = ({ blogs }) => {
   return <BlogList blogs={blogs} />;
 };
 
-export default BlogListWrapper;
+export default BlogListClient;

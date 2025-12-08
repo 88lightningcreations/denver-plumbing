@@ -1,11 +1,13 @@
 import React from 'react';
 import { getBlogPosts } from '../../lib/data';
-import BlogListWrapper from '../components/BlogListWrapper';
+import BlogListClient from '../components/BlogListClient';
+
+export const dynamic = 'force-dynamic';
 
 const BlogsPage = async () => {
   const blogs = await getBlogPosts();
 
-  return <BlogListWrapper blogs={blogs} />;
+  return <BlogListClient blogs={blogs} />;
 };
 
 export default BlogsPage;
