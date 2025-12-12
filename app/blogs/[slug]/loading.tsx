@@ -1,32 +1,25 @@
 import React from 'react';
-import { Container, Placeholder } from 'react-bootstrap';
 
 const LoadingPost = () => {
   return (
-    <Container className="my-5">
+    <div className="container my-5">
       <main>
         <article>
           <h1>
-            <Placeholder as="span" animation="glow">
-              <Placeholder xs={8} />
-            </Placeholder>
+            <span className="placeholder col-8"></span>
           </h1>
           <p className="text-muted">
-            <Placeholder as="span" animation="glow">
-              <Placeholder xs={4} />
-            </Placeholder>
+            <span className="placeholder col-4"></span>
           </p>
-          <Placeholder as="div" animation="glow">
-            <Placeholder style={{ width: '100%', height: 400 }} className="my-4" />
-          </Placeholder>
-          <Placeholder as="p" animation="glow">
-            <Placeholder xs={12} />
-            <Placeholder xs={10} />
-            <Placeholder xs={11} />
-          </Placeholder>
+          <div className="placeholder w-100 my-4" style={{ height: 400 }}></div>
+          <p className="placeholder-glow">
+            <span className="placeholder col-12"></span>
+            <span className="placeholder col-10"></span>
+            <span className="placeholder col-11"></span>
+          </p>
         </article>
       </main>
-    </Container>
+    </div>
   );
 };
 

@@ -1,32 +1,31 @@
 import React from 'react';
-import { Container, Row, Col, Card, Placeholder } from 'react-bootstrap';
 
 const Loading = () => {
   return (
-    <Container className="my-5">
+    <div className="container my-5">
       <h2 className="text-center mb-4">
-        <Placeholder as="span" animation="glow">
-          <Placeholder xs={4} />
-        </Placeholder>
+        <span className="placeholder-glow">
+          <span className="placeholder col-4"></span>
+        </span>
       </h2>
-      <Row>
+      <div className="row">
         {[...Array(3)].map((_, index) => (
-          <Col key={index} lg={4} md={6} sm={12} className="mb-4">
-            <Card className="h-100">
-              <Card.Body>
-                <Placeholder as={Card.Title} animation="glow">
-                  <Placeholder xs={6} />
-                </Placeholder>
-                <Placeholder as={Card.Text} animation="glow">
-                  <Placeholder xs={7} /> <Placeholder xs={4} /> <Placeholder xs={4} />{' '}
-                  <Placeholder xs={6} /> <Placeholder xs={8} />
-                </Placeholder>
-              </Card.Body>
-            </Card>
-          </Col>
+          <div key={index} className="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div className="card h-100">
+              <div className="card-body">
+                <h5 className="card-title placeholder-glow">
+                  <span className="placeholder col-6"></span>
+                </h5>
+                <p className="card-text placeholder-glow">
+                  <span className="placeholder col-7"></span> <span className="placeholder col-4"></span> <span className="placeholder col-4"></span>{' '}
+                  <span className="placeholder col-6"></span> <span className="placeholder col-8"></span>
+                </p>
+              </div>
+            </div>
+          </div>
         ))}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 };
 

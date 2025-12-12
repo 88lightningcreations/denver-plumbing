@@ -1,54 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Lato:wght@400;700&display=swap');
-
 :root {
-  --primary: #3A506B;
-  --secondary: #FFCDB2;
-  --accent: #E07A5F;
-  --neutral-light: #F4F1DE;
-  --neutral-dark: #3D405B;
-  --success: #81B29A;
-}
+  --brand-primary: #3A506B;
+  --brand-secondary: #FFCDB2;
+  --brand-accent: #E07A5F;
+  --brand-accent-dark: #d46a4d;
+  --brand-neutral-light: #F4F1DE;
+  --brand-neutral-dark: #3D405B;
+  --brand-success: #81B29A;
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  --bs-primary: var(--brand-primary);
+  --bs-secondary: var(--brand-secondary);
+  --bs-success: var(--brand-success);
+  --bs-light: var(--brand-neutral-light);
+  --bs-dark: var(--brand-neutral-dark);
 }
 
 body {
-  padding-top: 56px; /* For the fixed navbar */
-  color: var(--neutral-dark);
-  background: var(--neutral-light);
-  font-family: 'Lato', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-lato), sans-serif;
+  background-color: var(--brand-neutral-light);
+  color: var(--brand-neutral-dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lilita One', cursive;
-  color: var(--primary);
+  font-family: var(--font-lilita-one), sans-serif;
+  color: var(--brand-primary);
 }
 
-main {
-  padding: 2rem 0;
+.brand-navbar {
+  background-color: var(--brand-primary);
+  font-family: var(--font-lilita-one), sans-serif;
 }
 
-section {
-  padding: 4rem 1rem;
-}
-
-a {
-  color: var(--accent);
+.custom-btn {
+  background-color: var(--brand-accent);
+  color: var(--brand-neutral-light);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
 }
 
-a:hover {
-  text-decoration: underline;
+.custom-btn:hover {
+  background-color: var(--brand-accent-dark); 
+}
+
+.text-accent {
+    color: var(--brand-accent);
+}
+
+.bg-primary {
+    background-color: var(--brand-primary);
+}
+
+.text-secondary {
+    color: var(--brand-secondary);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: var(--brand-primary);
+  color: var(--brand-neutral-light);
+  gap: 2rem;
+  width: 100%;
 }

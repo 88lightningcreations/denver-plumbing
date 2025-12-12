@@ -1,67 +1,36 @@
-import { getBlogPostBySlug } from '../../../lib/data';
-import { notFound } from 'next/navigation';
+import React from 'react';
+import styles from '../Blog.module.css';
 import Image from 'next/image';
+import { supabase } from '../../lib/supabase';
+import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
+export const revalidate = 60; // Revalidate every 60 seconds
 
-export async function generateMetadata({ params }: BlogPostPageProps) {
-  const slug = params?.slug;
-
-  if (!slug) {
-    return {
-      title: 'Post Not Found',
-    };
-  }
-
-  const post = await getBlogPostBySlug(slug);
-
-  if (!post) {
-    return {
-      title: 'Post Not Found',
-    };
-  }
-
-  return {
-    title: post.title,
-    description: post.excerpt,
-  };
-}
-
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const slug = params?.slug;
-
-  if (!slug) {
+async function getBlogPost(slug: string) {
+  const { data, error } = await supabase.from('blog_posts').select('*').eq('slug', slug).single();
+  if (error) {
+    console.error('Error fetching blog post:', error);
     notFound();
   }
+  return data;
+}
 
-  const post = await getBlogPostBySlug(slug);
-
-  if (!post) {
-    notFound();
-  }
+const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
+  const post = await getBlogPost(params.slug);
 
   return (
-    <div className="container my-5">
-        <main>
-            <article>
-            <h1>{post.title}</h1>
-            <p className="text-muted">Published on: {new Date(post.created_at).toLocaleDateString()}</p>
-            {post.image_url && 
-                <Image 
-                    src={post.image_url} 
-                    alt={post.title} 
-                    className="img-fluid my-4" 
-                    width={1200} 
-                    height={675} 
-                    style={{ objectFit: 'cover' }}
-                />}
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-            </article>
-        </main>
+    <div className={styles.blogContainer}>
+      <div className={styles.blogPost}>
+        <h1 className={styles.blogPostTitle}>{post.title}</h1>
+        <p className={styles.blogMeta}>Posted on {new Date(post.created_at).toLocaleDateString()}</p>
+        {post.image && <Image src={post.image} alt={post.title} width={800} height={400} className={styles.blogImage} />}
+        <div className={styles.blogPostContent}>
+          <ReactMarkdown>{post.content}</ReactMarkdown>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default BlogPostPage;

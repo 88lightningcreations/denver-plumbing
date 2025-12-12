@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './FAQ.module.css';
+import { useFadeIn } from '../hooks/useFadeIn';
 
 interface Faq {
   question: string;
@@ -36,6 +37,7 @@ const faqs: Faq[] = [
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [ref, isVisible] = useFadeIn();
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -60,7 +62,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className={styles.faqContainer}>
+    <div ref={ref} className={`${styles.faqContainer} ${isVisible ? styles.visible : ''}`}>
       {faqs.map((faq, index) => (
         <div key={index} className={`${styles.faqItem} ${activeIndex === index ? styles.active : ''}`}>
           <div className={styles.faqQuestion} onClick={() => toggleFAQ(index)}>
