@@ -9,7 +9,7 @@ type Article = {
   slug: string;
   title: string;
   excerpt: string;
-  imageUrl: string;
+  image: string;
 };
 
 const ArticleCarouselClient: React.FC<{ articles: Article[] }> = ({ articles }) => {
@@ -34,11 +34,12 @@ const ArticleCarouselClient: React.FC<{ articles: Article[] }> = ({ articles }) 
                 <div key={article.id} className="col-md-4 mb-3">
                   <div className="card h-100">
                     <Image
-                      src={article.imageUrl}
+                      src={article.image || 'https://via.placeholder.com/500x300'}
                       alt={article.title}
                       width={500}
                       height={300}
                       className="card-img-top"
+                      style={{ width: '100%', height: 'auto' }} // Add this style
                     />
                     <div className="card-body">
                       <h5 className="card-title">{article.title}</h5>

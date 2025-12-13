@@ -26,7 +26,6 @@ The website's design is based on the provided hero image, which features a frien
 
 ### Pages
 *   **Homepage**: Includes a hero section, services overview, customer testimonials, FAQ, and a blog post carousel.
-*   **Services Page**: Detailed descriptions of plumbing services.
 *   **Blog**: A collection of articles with tips and information. Individual blog posts are rendered from a Supabase backend.
 *   **Contact Page**: A form for customer inquiries.
 *   **Static Pages**: Disclaimer, Privacy Policy, Terms of Service, Copyright Notice, and Cookie Consent.
@@ -48,3 +47,12 @@ The website's design is based on the provided hero image, which features a frien
     - Centralized all markdown styling into a single CSS module.
     - Refactored the blog post page to use the new `Markdown` component.
     - Validated the changes with linting and a production build.
+- **Blog Post Integration**:
+    - Integrated the blog post carousel on the homepage to fetch and display real data (ID, slug, title, excerpt, and image) from the `blog_posts` table in the Supabase database.
+    - Updated the `ArticleCarousel.tsx` and `ArticleCarousel.client.tsx` components to handle the fetched data.
+    - Ensured individual blog post pages (`/[slug]/page.tsx`) correctly display the full post content, including the image.
+    - Added a fallback for when no articles are found.
+    - Verified that the `image` and `excerpt` fields are correctly retrieved and displayed.
+- **Image Error Handling**:
+    - Implemented a fallback to a placeholder image for blog posts that are missing an image URL. This resolves the "missing src property" error.
+    - Corrected the aspect ratio of images in the article carousel and blog post pages to resolve the aspect ratio warning. This was done by applying `style={{ width: '100%', height: 'auto' }}` to the `next/image` components.

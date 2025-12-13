@@ -26,15 +26,14 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
             <p className={styles.blogMeta}>
                 Posted on {new Date(post.created_at).toLocaleDateString()}
             </p>
-            {post.image && (
-                <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={800}
-                    height={400}
-                    className={styles.blogImage}
-                />
-            )}
+            <Image
+                src={post.image || 'https://via.placeholder.com/800x400'}
+                alt={post.title}
+                width={800}
+                height={400}
+                className={styles.blogImage}
+                style={{ width: '100%', height: 'auto' }} // Add this style
+            />
             <Markdown content={post.content} />
         </div>
     </div>
