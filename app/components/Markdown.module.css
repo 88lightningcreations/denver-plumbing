@@ -1,0 +1,102 @@
+.markdownContent {
+    line-height: 1.6;
+    color: var(--brand-neutral-dark);
+}
+
+.markdownContent h1,
+.markdownContent h2,
+.markdownContent h3,
+.markdownContent h4,
+.markdownContent h5,
+.markdownContent h6 {
+    color: var(--brand-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-lilita-one), sans-serif;
+}
+
+.markdownContent p {
+    margin-bottom: 1rem;
+}
+
+.markdownContent a {
+    color: var(--brand-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.markdownContent a:hover {
+    color: var(--brand-accent-dark);
+    text-decoration: underline;
+}
+
+.markdownContent ul,
+.markdownContent ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.markdownContent li {
+    margin-bottom: 0.5rem;
+}
+
+.markdownContent blockquote {
+    border-left: 4px solid var(--brand-accent);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: var(--brand-neutral-dark);
+    opacity: 0.9;
+}
+
+.markdownContent hr {
+    border: none;
+    height: 1px;
+    background-color: var(--brand-accent);
+    margin: 2rem 0;
+    opacity: 0.5;
+}
+
+.markdownContent code {
+    background-color: #f4f4f4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--brand-accent-dark);
+}
+
+.markdownContent pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.markdownContent pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.markdownContent table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.markdownContent th,
+.markdownContent td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.markdownContent th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: var(--brand-primary);
+}
+
+.markdownContent tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
