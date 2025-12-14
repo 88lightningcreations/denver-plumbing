@@ -28,3 +28,101 @@
     border-radius: 8px;
     margin-bottom: 2rem;
 }
+
+.blogContent h1,
+.blogContent h2,
+.blogContent h3,
+.blogContent h4,
+.blogContent h5,
+.blogContent h6 {
+    color: var(--brand-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-lilita-one), sans-serif;
+}
+
+.blogContent p {
+    margin-bottom: 1rem;
+}
+
+.blogContent a {
+    color: var(--brand-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blogContent a:hover {
+    color: var(--brand-accent-dark);
+    text-decoration: underline;
+}
+
+.blogContent ul,
+.blogContent ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.blogContent li {
+    margin-bottom: 0.5rem;
+}
+
+.blogContent blockquote {
+    border-left: 4px solid var(--brand-accent);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: var(--brand-neutral-dark);
+    opacity: 0.9;
+}
+
+.blogContent hr {
+    border: none;
+    height: 1px;
+    background-color: var(--brand-accent);
+    margin: 2rem 0;
+    opacity: 0.5;
+}
+
+.blogContent code {
+    background-color: #f4f4f4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--brand-accent-dark);
+}
+
+.blogContent pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.blogContent pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.blogContent table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.blogContent th,
+.blogContent td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.blogContent th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: var(--brand-primary);
+}
+
+.blogContent tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

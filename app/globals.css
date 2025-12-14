@@ -82,3 +82,39 @@ h1, h2, h3, h4, h5, h6 {
   gap: 2rem;
   width: 100%;
 }
+
+.scroller {
+    max-width: 100%;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+    mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+}
+
+.scroller__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: scroll 60s linear infinite;
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll 60s linear infinite;
+}
+
+
+.scroller:hover .scroller__inner {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+.card_container {
+    width: 350px;
+    margin: 0 1rem;
+}
