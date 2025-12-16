@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 type Article = {
@@ -9,7 +8,6 @@ type Article = {
   slug: string;
   title: string;
   excerpt: string;
-  image: string;
 };
 
 const ArticleCarouselClient: React.FC<{ articles: Article[] }> = ({ articles }) => {
@@ -39,15 +37,6 @@ const ArticleCarouselClient: React.FC<{ articles: Article[] }> = ({ articles }) 
                     <div key={`${article.id}-${index}`} className="card_container">
                         <Link href={`/${article.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                             <div className="card h-100">
-                                <Image
-                                    src={article.image || 'https://via.placeholder.com/500x300'}
-                                    alt={article.title}
-                                    width={500}
-                                    height={300}
-                                    className="card-img-top"
-                                    style={{ width: '100%', height: 'auto' }}
-                                    priority={index < 3} // Prioritize the first few images
-                                />
                                 <div className="card-body">
                                     <h5 className="card-title">{article.title}</h5>
                                     <p className="card-text">{article.excerpt}</p>

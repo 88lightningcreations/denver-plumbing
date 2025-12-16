@@ -4,7 +4,7 @@ import ArticleCarouselClient from './ArticleCarousel.client';
 async function getArticles() {
   const { data, error } = await supabase
     .from('blog_posts')
-    .select('id,slug,title,excerpt,image')
+    .select('id,slug,title,excerpt')
     .order('created_at', { ascending: false });
 
   if (error) {
