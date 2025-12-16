@@ -4,16 +4,16 @@ import React from 'react';
 
 const testimonials = [
   {
-    name: 'John Doe',
-    quote: 'Peach Tree Plumbing was a lifesaver! They fixed my leaky faucet in no time. Highly recommended!',
+    name: 'Erin C.',
+    quote: 'This has to be the easiest experience I’ve had when it comes to having repairs or updates done to my home. I needed hose line relocated…he was on time, straightforward, and the price was reasonable. Thank you!!!',
   },
   {
-    name: 'Jane Smith',
-    quote: 'I was so impressed with the professionalism and expertise of the Peach Tree team. They are my go-to plumbers now.',
+    name: 'Tom M.',
+    quote: 'Johnathan communicates well, flexed with our schedule, arrived on time and completed the work quickly. We’ll use them again the future when the need arises.',
   },
   {
-    name: 'Peter Jones',
-    quote: 'Fast, friendly, and affordable. What more could you ask for? I will definitely be using their services again.',
+    name: 'Debbie P.',
+    quote: 'John replaced our kitchen faucet. He arrived as scheduled, completed the job with cleanup at a reasonable cost. I would certainly recommend him.',
   },
 ];
 

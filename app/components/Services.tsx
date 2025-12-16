@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './Services.module.css';
-import { FaTools, FaFaucet, FaWater, FaExclamationTriangle, FaWrench, FaToilet, FaHome, FaBuilding, FaUserTie, FaFileInvoiceDollar, FaStar } from 'react-icons/fa';
+import { FaTools, FaFaucet, FaWater, FaExclamationTriangle, FaWrench, FaToilet, FaHome, FaBuilding } from 'react-icons/fa';
 
 const services = [
   {
@@ -47,24 +47,6 @@ const services = [
   },
 ];
 
-const whyChooseUs = [
-    {
-      title: 'Experienced Professionals',
-      description: 'Our team consists of highly trained and experienced plumbers who are dedicated to providing the best possible service.',
-      icon: <FaUserTie />,
-    },
-    {
-      title: 'Upfront Pricing',
-      description: 'We believe in transparency. You will always receive a clear and upfront price before we begin any work.',
-      icon: <FaFileInvoiceDollar />,
-    },
-    {
-      title: 'Customer Satisfaction Guaranteed',
-      description: 'Your satisfaction is our top priority. We stand behind our work and will not rest until you are completely satisfied.',
-      icon: <FaStar />,
-    },
-  ];
-
 const Services = () => {
   return (
     <section id="services" className={styles.servicesContainer}>
@@ -81,19 +63,6 @@ const Services = () => {
             </div>
           ))}
         </div>
-
-        <h2 className={`${styles.title} mt-5`}>Why Choose Us?</h2>
-      <div className={styles.grid}>
-        {whyChooseUs.map((item, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.iconWrapper}>
-                {item.icon}
-            </div>
-            <h3 className={styles.cardTitle}>{item.title}</h3>
-            <p className={styles.cardText}>{item.description}</p>
-          </div>
-        ))}
-      </div>
       </div>
     </section>
   );
