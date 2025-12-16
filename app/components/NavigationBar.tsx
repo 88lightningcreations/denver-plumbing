@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <nav className="navbar brand-navbar fixed-top">
       <div className="container d-flex justify-content-between">
-        <Link href="/" className="navbar-brand text-secondary">
+        <Link href="/" className="navbar-brand navbar-brand-peach">
           Peach Tree Plumbing
         </Link>
         <a href="tel:720-298-1900" className="nav-link text-white"> (720) 298-1900</a>

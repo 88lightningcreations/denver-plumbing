@@ -12,7 +12,7 @@ The website's design is based on the provided hero image, which features a frien
 ### Color Palette
 
 - **Primary**: `#3A506B` (Deep Blue - from overalls)
-- **Secondary**: `#FFCDB2` (Peach - from the fruit)
+- **Secondary**: `#FFDAB9` (Peach - from the fruit)
 - **Accent**: `#E07A5F` (Terracotta Red - from the wrench)
 - **Neutral (Light)**: `#F4F1DE` (Off-white/Tan - from the image background)
 - **Neutral (Dark)**: `#3D405B` (Dark Green/Brown - from the text in the image)

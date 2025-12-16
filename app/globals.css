@@ -1,6 +1,6 @@
 :root {
   --brand-primary: #3A506B;
-  --brand-secondary: #FFCDB2;
+  --brand-secondary: #FFDAB9;
   --brand-accent: #E07A5F;
   --brand-accent-dark: #d46a4d;
   --brand-neutral-light: #F4F1DE;
@@ -33,13 +33,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-lilita-one), sans-serif;
 }
 
-.navbar-brand.text-secondary {
+.navbar-brand.text-secondary, .navbar-brand-peach {
+  color: var(--brand-secondary) !important; /* Forcing the color */
   text-decoration: underline;
   transition: transform 0.2s ease-in-out;
   display: inline-block;
 }
 
-.navbar-brand.text-secondary:hover {
+.navbar-brand.text-secondary:hover, .navbar-brand-peach:hover {
   transform: scale(1.05);
 }
 
