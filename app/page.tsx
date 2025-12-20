@@ -3,6 +3,7 @@ import Testimonials from '@/app/components/Testimonials';
 import Services from '@/app/components/Services';
 import CallToAction from '@/app/components/CallToAction';
 import ArticleCarousel from '@/app/components/ArticleCarousel';
+import FAQ from '@/app/components/FAQ';
 
 export const revalidate = 60;
 
@@ -13,6 +14,7 @@ export default function Home() {
       <div className="container">
         <Testimonials />
         <Services />
+        <FAQ />
         <section id="blog" className="py-5">
           <ArticleCarousel />
         </section>
