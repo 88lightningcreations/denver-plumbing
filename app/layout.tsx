@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Lilita_One, Lato } from "next/font/google";
+import { Lilita_One, Lato } from "next/font/google";
 import "./globals.css";
 import "./styles/markdown.css";
 import NavigationBar from "@/app/components/NavigationBar";
