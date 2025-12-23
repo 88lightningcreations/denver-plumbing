@@ -10,7 +10,10 @@ const NavigationBar = () => {
         <Link href="/" className="navbar-brand navbar-brand-peach">
           Peach Tree Plumbing
         </Link>
-        <a href="tel:720-298-1900" className="nav-link text-white"> (720) 298-1900</a>
+        <a href="tel:720-298-1900" className="nav-link text-white"> 
+            <span className="d-lg-none">Call & Text </span>
+            (720) 298-1900
+        </a>
       </div>
     </nav>
   );

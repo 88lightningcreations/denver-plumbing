@@ -4,6 +4,7 @@ import "./globals.css";
 import "./styles/markdown.css";
 import NavigationBar from "@/app/components/NavigationBar";
 import Footer from "@/app/components/Footer";
+import Script from 'next/script';
 
 const lilitaOne = Lilita_One({
   subsets: ["latin"],
@@ -39,7 +40,7 @@ export default function RootLayout({
         <NavigationBar />
         <main className="flex-shrink-0">{children}</main>
         <Footer />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></Script>
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+
 :root {
   --brand-primary: #3A506B;
   --brand-secondary: #FFDAB9;
@@ -118,4 +119,22 @@ h1, h2, h3, h4, h5, h6 {
 .card_container {
     width: 350px;
     margin: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url('/residential and commercial plumber denver colorado.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+
+  .hero h1, .hero p {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+  }
+
+  .hero > div:nth-child(2) {
+    display: none; /* Hide the foreground image on mobile */
+  }
 }
