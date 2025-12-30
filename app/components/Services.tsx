@@ -2,18 +2,13 @@
 
 import React from 'react';
 import styles from './Services.module.css';
-import { FaTools, FaFaucet, FaWater, FaExclamationTriangle, FaWrench, FaToilet, FaHome, FaBuilding } from 'react-icons/fa';
+import { FaTools, FaFaucet, FaWater, FaExclamationTriangle, FaWrench, FaToilet, FaHome, FaBuilding, FaFire } from 'react-icons/fa';
 
 const services = [
   {
     title: 'Emergency Plumbing',
     description: '24/7 emergency services for all your plumbing needs.',
     icon: <FaExclamationTriangle />,
-  },
-  {
-    title: 'Drain Cleaning',
-    description: 'Expert drain cleaning to keep your pipes flowing smoothly.',
-    icon: <FaWrench />,
   },
   {
     title: 'Water Heaters',
@@ -34,6 +29,11 @@ const services = [
     title: 'Toilet Repair',
     description: 'Repair and installation of all types of toilets and fixtures.',
     icon: <FaToilet />,
+  },
+  {
+    title: 'Natural Gas Plumbing',
+    description: 'Safe and reliable installation and repair of natural gas lines for your water heater, stove, fireplace, and outdoor bbq.',
+    icon: <FaFire />,
   },
   {
     title: 'Residential Plumbing',
