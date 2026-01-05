@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -13,6 +14,15 @@ const Hero = () => {
           <br />
           Call or text us anytime when you need us!
         </p>
+      </div>
+      <div className="hero-image">
+        <Image
+          src="/PTP-LOGO.jpg"
+          alt="PTP Logo"
+          width={500}
+          height={500}
+          className="img-fluid"
+        />
       </div>
     </section>
   );
