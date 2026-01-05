@@ -1,11 +1,10 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 
 const Hero = () => {
   return (
     <section className="hero">
-      <div>
+      <div className="hero-content">
         <h1 className="display-4">Your Trusted Local Plumber</h1>
         <p className="lead">
           Fast, friendly, and reliable service for all your plumbing needs.
@@ -14,16 +13,6 @@ const Hero = () => {
           <br />
           Call or text us anytime when you need us!
         </p>
-      </div>
-      <div>
-        <Image
-          src="/residential and commercial plumber denver colorado.jpeg"
-          alt="Professional plumber working on a pipe"
-          width={500}
-          height={500}
-          className="img-fluid rounded"
-          priority
-        />
       </div>
     </section>
   );

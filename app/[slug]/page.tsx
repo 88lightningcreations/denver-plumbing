@@ -52,7 +52,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <div className="container my-5">
+    <div className="container my-5 blog-post-container">
       <div className="row">
         <div className="col-lg-8 offset-lg-2">
           <h1 className="fw-bold mb-4 text-center">{post.title}</h1>
