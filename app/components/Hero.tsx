@@ -22,6 +22,7 @@ const Hero = () => {
           width={500}
           height={500}
           className="img-fluid"
+          priority
         />
       </div>
     </section>
