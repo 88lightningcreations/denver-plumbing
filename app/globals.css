@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 .brand-navbar {
   background-color: var(--brand-primary);
   font-family: var(--font-lilita-one), sans-serif;
+  padding: 0.5rem 0;
 }
 
 .navbar-brand.text-secondary, .navbar-brand-peach {
@@ -39,10 +40,15 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
   transition: transform 0.2s ease-in-out;
   display: inline-block;
+  font-size: 3rem;
 }
 
 .navbar-brand.text-secondary:hover, .navbar-brand-peach:hover {
   transform: scale(1.05);
+}
+
+.phone-link {
+  font-size: 2rem;
 }
 
 
@@ -62,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .custom-btn:hover {
-  background-color: var(--brand-accent-dark); 
+  background-color: var(--brand-accent-dark);
 }
 
 .text-accent {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import { FaFacebook, FaInstagram, FaYelp } from 'react-icons/fa';
+// import { FaFacebook, FaInstagram, FaYelp } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -16,6 +16,7 @@ const Footer: React.FC = () => {
           <p className={styles.footerText}>Email: PTP5280@gmail.com</p>
           <p className={styles.footerText}>Phone: (720) 298-1900</p>
         </div>
+  {/*             UPDATE SOCIALS TO CREATE WORKING LINKS
         <div className={styles.footerColumn}>
           <h3 className={styles.footerColumnTitle}>Stay Connected</h3>
           <div className={styles.socialIcons}>
@@ -24,6 +25,7 @@ const Footer: React.FC = () => {
             <a href="#" className={styles.socialIcon}><FaInstagram /></a>
           </div>
         </div>
+  */}
       </div>
     </footer>
   );

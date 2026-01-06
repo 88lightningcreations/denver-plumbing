@@ -31,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="YOUR_GOOGLE_SITE_VERIFICATION_CODE" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
