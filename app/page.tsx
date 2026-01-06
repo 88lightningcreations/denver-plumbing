@@ -11,17 +11,15 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="container">
-        <Testimonials />
-        <Services />
-        <FAQ />
-        <section id="blog" className="py-5">
-          <ArticleCarousel />
-        </section>
-        <section id="contact" className="py-5">
-          <CallToAction />
-        </section>
-      </div>
+      <Testimonials />
+      <Services />
+      <FAQ />
+      <section id="blog" className="py-5">
+        <ArticleCarousel />
+      </section>
+      <section id="contact" className="py-5">
+        <CallToAction />
+      </section>
     </>
   );
 }

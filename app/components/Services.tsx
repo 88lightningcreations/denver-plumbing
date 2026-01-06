@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './Services.module.css';
-import { FaTools, FaFaucet, FaWater, FaExclamationTriangle, FaWrench, FaToilet, FaHome, FaBuilding, FaFire } from 'react-icons/fa';
+import { FaTools, FaFaucet, FaWater, FaExclamationTriangle, FaToilet, FaHome, FaBuilding, FaFire } from 'react-icons/fa';
 
 const services = [
   {
@@ -49,17 +49,17 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className={styles.servicesContainer}>
-      <div className="container">
-        <h2 className={styles.title}>Our Services</h2>
-        <div className={styles.grid}>
+    <section id="services" className={styles['services-section']}>
+      <div className={styles['services-container']}>
+        <h2 className={styles['services-title']}>Our Services</h2>
+        <div className={styles['services-grid']}>
           {services.map((service, index) => (
-            <div className={styles.card} key={index}>
-              <div className={styles.iconWrapper}>
+            <div className={styles['service-card']} key={index}>
+              <div className={styles['service-icon']}>
                 {service.icon}
               </div>
-              <h3 className={styles.cardTitle}>{service.title}</h3>
-              <p className={styles.cardText}>{service.description}</p>
+              <h3 className={styles['service-title']}>{service.title}</h3>
+              <p className={styles['service-description']}>{service.description}</p>
             </div>
           ))}
         </div>
