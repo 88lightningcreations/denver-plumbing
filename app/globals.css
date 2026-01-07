@@ -29,29 +29,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--brand-primary);
 }
 
-.brand-navbar {
-  background-color: var(--brand-primary);
-  font-family: var(--font-lilita-one), sans-serif;
-  padding: 0.5rem 0;
-}
-
-.navbar-brand.text-secondary, .navbar-brand-peach {
-  color: var(--brand-secondary) !important; /* Forcing the color */
-  text-decoration: underline;
-  transition: transform 0.2s ease-in-out;
-  display: inline-block;
-  font-size: 3rem;
-}
-
-.navbar-brand.text-secondary:hover, .navbar-brand-peach:hover {
-  transform: scale(1.05);
-}
-
-.phone-link {
-  font-size: 2rem;
-}
-
-
 .custom-btn {
   display: inline-block;
   text-align: center;
@@ -84,7 +61,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,8 +68,16 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4rem 2rem;
   background-color: var(--brand-primary);
   color: var(--brand-neutral-light);
+  width: 100%;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   width: 100%;
+  max-width: 1200px; /* This is the key! Prevents the content from spreading too far */
 }
 
 .hero-content {
@@ -147,13 +131,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 80px;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
 @media (min-width: 769px) {
   .hero-image {
     display: block; /* Show the image on tablets and larger */
@@ -183,20 +160,16 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
   }
 
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .hero-image {
     display: none; /* Hide the foreground image on mobile */
   }
 
  .custom-btn {
     padding: 1.5rem 2rem;
-  }
-
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .phone-link {
-    align-self: flex-end;
   }
 }

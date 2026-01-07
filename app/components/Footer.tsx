@@ -1,8 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from './Footer.module.css';
-// import { FaFacebook, FaInstagram, FaYelp } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
@@ -16,16 +18,16 @@ const Footer: React.FC = () => {
           <p className={styles.footerText}>Email: PTP5280@gmail.com</p>
           <p className={styles.footerText}>Phone: (720) 298-1900</p>
         </div>
-  {/*             UPDATE SOCIALS TO CREATE WORKING LINKS
-        <div className={styles.footerColumn}>
-          <h3 className={styles.footerColumnTitle}>Stay Connected</h3>
-          <div className={styles.socialIcons}>
-            <a href="https.www.facebook.com/people/Colorado-Plumbing-Solutions/61570501647326/#" className={styles.socialIcon} target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            <a href="https://www.yelp.com/biz/peach-tree-plumbing-englewood-2?osq=denver+plumbing+team" className={styles.socialIcon} target="_blank" rel="noopener noreferrer"><FaYelp /></a>
-            <a href="#" className={styles.socialIcon}><FaInstagram /></a>
-          </div>
-        </div>
-  */}
+      </div>
+      <div className={styles.footerLinks}>
+        <Link href="/terms-of-service" className={styles.footerLink}>Terms of Service</Link>
+        <Link href="/terms-of-use" className={styles.footerLink}>Terms of Use</Link>
+        <Link href="/privacy-policy" className={styles.footerLink}>Privacy Policy</Link>
+        <Link href="/disclaimer" className={styles.footerLink}>Disclaimer</Link>
+        <Link href="/copyright-notice" className={styles.footerLink}>Copyright Notice</Link>
+      </div>
+      <div className={styles.footerBottom}>
+        <p>&copy; {currentYear} Peach Tree Plumbing. All Rights Reserved.</p>
       </div>
     </footer>
   );

@@ -1,0 +1,53 @@
+
+.navbar {
+  background-color: var(--brand-primary);
+  font-family: var(--font-lilita-one), sans-serif;
+  padding: 0.5rem 1rem;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.brand {
+  color: var(--brand-secondary) !important;
+  text-decoration: underline;
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+  /* Desktop font size */
+  font-size: 2.5rem;
+}
+
+.brand:hover {
+  transform: scale(1.05);
+}
+
+.phoneLink {
+  color: white;
+  /* Desktop font size */
+  font-size: 1.75rem;
+  white-space: nowrap;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .navContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand {
+    /* Mobile font size */
+    font-size: 1.8rem;
+  }
+
+  .phoneLink {
+    /* Mobile font size */
+    font-size: 1rem;
+    align-self: center;
+  }
+}

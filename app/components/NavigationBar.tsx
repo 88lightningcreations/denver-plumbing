@@ -2,16 +2,17 @@
 
 import React from 'react';
 import Link from 'next/link';
+import styles from './NavigationBar.module.css';
 
 const NavigationBar = () => {
   return (
-    <nav className="navbar brand-navbar fixed-top">
+    <nav className={`${styles.navbar} fixed-top`}>
       <div className="container">
-        <div className="nav-container">
-          <Link href="/" className="navbar-brand navbar-brand-peach">
+        <div className={styles.navContainer}>
+          <Link href="/" className={styles.brand}>
             Peach Tree Plumbing
           </Link>
-          <a href="tel:720-298-1900" className="nav-link text-white phone-link">
+          <a href="tel:720-298-1900" className={styles.phoneLink}>
             call & text (720)298-1900
           </a>
         </div>
