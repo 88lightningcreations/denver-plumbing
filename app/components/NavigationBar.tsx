@@ -13,7 +13,7 @@ const NavigationBar = () => {
             Peach Tree Plumbing
           </Link>
           <a href="tel:720-298-1900" className={styles.phoneLink}>
-            call & text (720)298-1900
+            TEXT & CALL (720)298-1900
           </a>
         </div>
       </div>

@@ -66,7 +66,6 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   min-height: 100vh;
   padding: 4rem 2rem;
-  background-color: var(--brand-primary);
   color: var(--brand-neutral-light);
   width: 100%;
 }
@@ -135,6 +134,9 @@ h1, h2, h3, h4, h5, h6 {
   .hero-image {
     display: block; /* Show the image on tablets and larger */
   }
+  .hero {
+    background-color: var(--brand-primary);
+  }
 }
 
 @media (max-width: 768px) {
@@ -149,20 +151,15 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
   .hero-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .hero-content h1,
+  .hero-content .lead {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   }
 
   .hero-image {
