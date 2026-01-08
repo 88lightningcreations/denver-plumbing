@@ -1,0 +1,24 @@
+.hero-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-content {
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .hero-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-content {
+        flex: 1;
+    }
+
+    .hero-banner {
+        flex: 1;
+    }
+}

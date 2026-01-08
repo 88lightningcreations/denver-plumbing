@@ -1,22 +1,38 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const userAgent = typeof window.navigator === "undefined" ? "" : navigator.userAgent;
+    const mobile = Boolean(userAgent.match(
+      /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+    ));
+    setIsMobile(mobile);
+  }, []);
+
+  const googleBusinessProfileURL = 'https://www.google.com/maps/place/Peach+Tree+Plumbing+LLC/@39.642466,-104.991296,15z/data=!4m2!3m1!1s0x0:0x5d4b3917d43291c9?sa=X&ved=2ahUKEwi52qTMwfqAAxU9go4IHRk2B2EQ_BJ6BAg_EAA&ved=2ahUKEwi52qTMwfqAAxU9go4IHRk2B2EQ_BJ6BAhDEAg';
 
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerColumn}>
           <h3 className={styles.footerColumnTitle}>About Us</h3>
-          <p className={styles.footerText}>Your trusted local plumber in Denver, Colorado, providing top-notch residential and commercial services.</p>
+          <p className={styles.footerText}>Our mission is to provide reliable, high-quality, and professional service with integrity, honesty, and a commitment to customer satisfaction and to be the most trusted plumbing service by upholding the highest ethical standards and honest business practices, building lasting relationships to protect you and your home.</p>
         </div>
         <div className={styles.footerColumn}>
           <h3 className={styles.footerColumnTitle}>Contact Us</h3>
           <p className={styles.footerText}>4210 South Galapago Street, Englewood, CO 80110</p>
-          <p className={styles.footerText}>Email: PTP5280@gmail.com</p>
-          <p className={styles.footerText}>Phone: (720) 298-1900</p>
+          <p className={styles.footerText}>
+            Email: <a href="mailto:PTP5280@gmail.com" className={styles.footerLink}>PTP5280@gmail.com</a>
+          </p>
+          <p className={styles.footerText}>
+            Phone: <a href={isMobile ? 'tel:720-298-1900' : googleBusinessProfileURL} className={styles.footerLink} target="_blank" rel="noopener noreferrer">(720) 298-1900</a>
+          </p>
         </div>
       </div>
       <div className={styles.footerLinks}>

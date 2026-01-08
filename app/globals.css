@@ -64,10 +64,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   padding: 4rem 2rem;
   color: var(--brand-neutral-light);
   width: 100%;
+  position: relative;
 }
 
 .hero-container {
@@ -76,18 +76,20 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: 2rem;
   width: 100%;
-  max-width: 1200px; /* This is the key! Prevents the content from spreading too far */
+  max-width: 1200px;
 }
 
 .hero-content {
   flex: 1;
-  position: relative;
-  z-index: 2;
 }
 
-.hero-image {
+.hero-image-desktop {
   flex: 1;
-  display: none; /* Hide by default */
+  display: none; 
+}
+
+.hero-image-mobile {
+  display: none;
 }
 
 .scroller {
@@ -132,39 +134,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 769px) {
-  .hero-image {
-    display: block; /* Show the image on tablets and larger */
+  .hero-image-desktop {
+    display: block;
   }
   .hero {
     background-color: var(--brand-primary);
+    min-height: 100vh;
   }
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 60px; /* Adjust this value based on the height of your navbar */
+  }
+
   .hero {
     flex-direction: column;
     text-align: center;
-    min-height: auto;
-    padding: 120px 2rem 4rem 2rem;
-    background-image: url('/PTP-LOGO.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    padding: 4rem 2rem;
+    background-color: var(--brand-primary);
+
   }
 
   .hero-container {
     flex-direction: column;
     text-align: center;
   }
+  
+  .hero-image-mobile {
+    display: block;
+    margin-bottom: 2rem;
+  }
 
   .hero-content h1,
   .hero-content .lead {
     color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  }
-
-  .hero-image {
-    display: none; /* Hide the foreground image on mobile */
   }
 
  .custom-btn {
