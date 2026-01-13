@@ -1,7 +1,10 @@
-
-# See https://www.robotstxt.org/robotstxt.html
-# See https://developers.google.com/search/docs/crawling-indexing/robots/intro
-
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+Disallow: /cookie-consent
+Disallow: /copyright-notice
+Disallow: /disclaimer
+Disallow: /privacy-policy
+Disallow: /terms-of-service
+Disallow: /terms-of-use
+
+Sitemap: https://peachtreeplumbing5280.com/sitemap.xml

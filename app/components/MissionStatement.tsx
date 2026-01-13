@@ -10,7 +10,7 @@ const MissionStatement = () => {
           <div className="col-lg-10 mx-auto">
             <blockquote className="blockquote">
               <p className="lead mb-0">
-                "When you support small local business you're not helping a CEO buy a third vacation home or another new car, you're directly helping local families meet everyday needs, such as buying groceries or paying for children's activities like dance lessons, or a team jersey, or a student pay for college, when you shop small you help real people meet basic needs and keep the money you spend locally making our community more vibrant and resilient."
+                &quot;When you support small local business you&apos;re not helping a CEO buy a third vacation home or another new car, you&apos;re directly helping local families meet everyday needs, such as buying groceries or paying for children&apos;s activities like dance lessons, or a team jersey, or a student pay for college, when you shop small you help real people meet basic needs and keep the money you spend locally making our community more vibrant and resilient.&quot;
               </p>
               <footer className="blockquote-footer mt-3">Jonathan</footer>
             </blockquote>

@@ -1,38 +1,27 @@
-'use client';
+import React from 'react';
+import Link from 'next/link';
 
-import React, { useState, useEffect } from 'react';
-
-const CallToAction = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize(); // Set initial value
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+const CallToAction: React.FC = () => {
   return (
-    <div className="p-5 mb-4 bg-light rounded-3">
-      <div className="container-fluid py-5 text-center">
-        <h2 className="display-5 fw-bold">Ready to get started?</h2>
-        <p className="col-md-8 fs-4 mx-auto">Contact us today for a free estimate on your plumbing needs.</p>
-        {isMobile ? (
-          <a href="tel:720-298-1900" className="custom-btn">
-            <span className="d-block">Call Us Now</span>
-          </a>
-        ) : (
-          <a href="https://share.google/o7OmMQGe2FxyyoZrr" className="custom-btn" target="_blank" rel="noopener noreferrer">
-            <span className="d-block">Get a Free</span>
-            <span className="d-block">Estimate</span>
-          </a>
-        )}
+    <div className={`text-center p-5 bg-light`}>
+      <div className="container">
+        <h2 className="fw-bold">Ready for Top-Notch Plumbing Services?</h2>
+        <p className="lead mb-4">Don&apos;t let plumbing problems disrupt your day. Contact Peach Tree Plumbing for reliable and efficient solutions.</p>
+        
+        {/* Desktop Button */}
+        <div className="d-none d-md-block">
+            <Link href="/contact" className={`btn btn-primary btn-lg`}>
+                Schedule Your Service Today
+            </Link>
+        </div>
+
+        {/* Mobile Button */}
+        <div className="d-block d-md-none">
+            <a href="tel:720-298-1900" className={`btn btn-primary btn-lg w-100`}>
+                Call Now: 720-298-1900
+            </a>
+        </div>
+
       </div>
     </div>
   );
